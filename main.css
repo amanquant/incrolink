@@ -45,6 +45,13 @@ button:hover {
   background-color: var(--light-pink);
   transition: var(--smooth);
 }
+.exp__btn {
+  color: var(--darkblue);
+  background-color: var(--light-pink);
+  transition: var(--smooth);
+  text-align: center;
+  margin-bottom: 12px;
+}
 p {
   line-height: 40px;
 }
@@ -53,20 +60,25 @@ p {
 }
 .section__heading {
   text-align: center;
-  padding: 0 15px;
+  padding: 15 25px;
 }
 .section__tag {
-  font-size: 3.75rem;
+  font-size: 2.75rem;
   font-family: "Krona One", serif;
   text-transform: capitalize;
-  color: var(--#050505);
+  color: var(--);
+}
+.section__undertag {
+  font-size: 1.5rem;
+  font-family: "Krona One", serif;
+  color: var(--);
 }
 .section__title {
-  font-size: 3.125rem;
+  font-size: 1.125rem;
   font-family: "Krona One", serif;
-  text-transform: capitalize;
-  color: var(--green);
+  color: var(--darkblue);
   margin-bottom: 18px;
+  margin-top: 12px;
 }
 .section__detail {
   font-size: 1.25rem;
@@ -75,7 +87,17 @@ p {
   max-width: 700px;
   margin: 0 auto;
 }
+.section__exptitle {
+  order: 1;
+  font-size: 1.125rem;
+  font-family: "Krona One", serif;
+  color: var(--darkblue);
+  margin-bottom: 12px;
+  margin-top: 18px;
+  text-align: center;
+}
 :root {
+  --white: #fff;
   --blue: #1400FF;
   --darkblue: #1e058a;
   --orange: #fa5652;
@@ -145,6 +167,8 @@ header {
   opacity: 0;
   z-index: 5;
   transition: var(--smooth);
+  text-align: center;
+  justify-content: center;
 }
 
 .navbar__links.navbar__open {
@@ -303,6 +327,7 @@ header {
   color: var(--darkblue);
   text-transform: none;
   margin-top: 25px;
+  justify-content: center;
 }
 .banner__btn {
   margin-top: 54px;
@@ -316,11 +341,12 @@ header {
 @media (min-width: 62em) {
   #banner .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    
   }
   .banner__img {
     order: 2;
+
   }
   .banner__desc {
     order: 1;
@@ -333,6 +359,7 @@ header {
     width: 100%;
   }
 }
+
 
 /* What Is ============= */
 #whatis .container {
@@ -353,13 +380,14 @@ header {
 .whatis__desc {
   position: relative;
   height: 275px;
-  margin: 0 auto 50px auto;
+  margin: 15 15px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: var(--smooth);
+  width: 100%;
 }
 
 .whatis__btn {
@@ -384,13 +412,53 @@ header {
   .whatis__desc {
     text-align: center;
     padding: 0 0px 0 0;
-    width: 45%;
+    width: 100%;
   }
 }
+.section__exp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
 
+.section__expcontent {
+  flex: 1;
+}
+
+.exp__img {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.exp__img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section__exptitle {
+  font-size: 1.5rem; /* Adjust size as needed */
+  margin-bottom: 1rem;
+  margin-left: 5px;
+  color: var(--);
+  text-align: start;
+}
+
+.exp__btn button {
+  padding: 0.75rem 1.5rem;
+  background-color: darkblue; /* Customize button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.exp__btn button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
 /* Contagion ============= */
 .contagion__cards {
-  padding-top: 5%;
+  padding-top: 10%;
   position: relative;
 }
 
@@ -427,7 +495,7 @@ header {
 }
 
 .contagion__card:hover:before {
-  background: var(--orange);
+  background: var(--darkblue);
   transition: var(--smooth);
 }
 
@@ -436,10 +504,10 @@ header {
 }
 
 .contagion__card h2 {
-  padding-top: 55px;
+  padding-top: 5px;
   font-size: 2.25rem;
   font-family: "Krona One", serif;
-  color: var(--green);
+  color: var(--darkblue);
   text-transform: capitalize;
   text-align: center;
 }
@@ -447,7 +515,7 @@ header {
 .contagion__card p {
   font-family: "Krona One", serif;
   font-size: 1.125rem;
-  color: var(--gray);
+  color: var(--);
   text-align: center;
   text-transform: capitalize;
   max-width: 380px;
@@ -531,12 +599,12 @@ header {
   position: relative;
   font-family: "Red Hat Display", serif;
   font-size: 2.5rem;
-  color: var(--orange);
+  color: var(--white);
 }
 
 .todo__step-desc span:before {
   content: "";
-  background-color: var(--pink);
+  background-color: var(--darkblue);
   position: absolute;
   width: 70px;
   height: 70px;
@@ -553,7 +621,7 @@ header {
   padding-top: 15px;
   font-size: 2.875rem;
   font-family: "Krona One", serif;
-  color: var(--green);
+  color: var(--darkblue);
   text-transform: capitalize;
 }
 
@@ -624,12 +692,16 @@ header {
     display: initial;
   }
 }
+/* exp ============= */
+.exp__img {
+  order: 2;
+}
 
 /* Contact ============= */
 .contact__title h1 {
   font-family: "Krona One", serif;
   font-size: 2.75rem;
-  color: var(--green);
+  color: var(--darkblue);
   text-align: center;
   text-transform: capitalize;
   max-width: 720px;
@@ -645,34 +717,28 @@ header {
   align-items: center;
 }
 
-.contact__form input {
-  font-family: "Krona One", serif;
-  font-size: 1.375rem;
-  margin-top: 60px;
-  max-width: 800px;
-  width: 90%;
-  height: 114px;
-  padding: 15px 15px 15px 35px;
-  border-radius: 200px;
-  box-shadow: var(--shadow);
-  border: none;
-}
-
-.contact__form input:focus {
-  outline: none;
-}
 
 .contact__form button {
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   margin-top: 60px;
+  justify-content: center;
+  align-items: center;
+}
+.banner__expsecond {
+  font-size: 0.5rem;
+  font-family: "Krona One", serif;
+  color: var(--darkblue);
+  margin-top: 10px;
+  justify-content: center;
+  text-align: center;
 }
 
 @media (min-width: 62rem) {
   .contact__title h1 {
-    font-size: 3.375rem;
+    font-size: 2.375rem;
   }
   .contact__form {
-    max-width: 800px;
+    max-width: 100%px;
     width: 100%;
     margin: 0 auto;
   }
@@ -684,6 +750,7 @@ header {
     top: 20%;
     right: 2%;
     transform: translate(-2%, -20%);
+    align-items: center;
   }
 }
 
@@ -711,12 +778,12 @@ header {
   font-size: 1.375rem;
   text-decoration: none;
   text-transform: capitalize;
-  color: var(--green);
+  color: var(--darkblue);
   transition: var(--smooth);
 }
 
 .footer__link a:hover {
-  color: var(--orange);
+  color: var(--darkblue);
   transition: var(--smooth);
 }
 
@@ -729,12 +796,12 @@ header {
 .footer__socials svg {
   cursor: pointer;
   margin: 0 15px;
-  color: var(--green);
+  color: var(--darkblue);
   transition: var(--smooth);
 }
 
 .footer__socials svg:hover {
-  color: var(--orange);
+  color: var(--darkblue);
   transition: var(--smooth);
 }
 
