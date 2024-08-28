@@ -645,7 +645,6 @@ header {
 
 @media (min-width: 62rem) {
   .todo__step {
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
   }
