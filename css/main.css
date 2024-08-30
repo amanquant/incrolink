@@ -37,17 +37,16 @@ button {
   border: none;
   border-radius: 100px;
   cursor: pointer;
-  box-shadow: var(--shadow);
   transition: var(--smooth);
 }
 button:hover {
   color: var(--darkblue);
-  background-color: var(--light-pink);
+  background-color: var(--white);
   transition: var(--smooth);
 }
 .exp__btn {
   color: var(--darkblue);
-  background-color: var(--light-pink);
+  background-color: var(--white);
   transition: var(--smooth);
   text-align: center;
   margin-bottom: 12px;
@@ -126,7 +125,7 @@ p {
 }
 
 header {
-  background-color: var(--light-pink);
+  background-color: var(--white);
 }
 
 .navbar {
@@ -134,7 +133,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 25px 15px 55px 15px;
-  background-color: var(--light-pink);
+  background-color: var(--white);
 }
 
 /* logo */
@@ -144,20 +143,20 @@ header {
 }
 
 .navbar__logo img {
-  width: 63px;
+  width: 60%;
 }
 
 .navbar__logo p {
   font-family: "Krona One", serif;
   font-size: 1.125rem;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--darkblue);
   margin-left: 14px;
 }
 
 /* menu */
 .navbar__links {
-  position: fixed;
+  position:fixed;
   top: 0;
   left: 0;
   width: 60%;
@@ -184,21 +183,21 @@ header {
 
 .navbar__link a {
   font-family: "Krona One", serif;
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
   text-transform: capitalize;
   transition: var(--smooth);
 }
 
 .navbar__link a:hover {
-  color: var(--green);
+  color: var(--darkblue);
   transition: var(--smooth);
 }
 
 .navbar__btn {
   font-size: 1.125rem;
-  margin-left: 35px;
-  border: 2px solid var(--pink);
+  text-decoration: none;
+    list-style: none;
 }
 
 /* icon  */
@@ -260,7 +259,7 @@ header {
     position: initial;
     transform: translateX(0);
     opacity: 1;
-    background-color: var(--light-pink);
+    background-color: var(--white);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -269,14 +268,13 @@ header {
     margin: 0 25px;
   }
   .navbar__link a {
-    color: var(--green);
+    color: var(--darkblue);
   }
   .navbar__link a:hover {
-    color: var(--orange);
+    color: var(--darkblue);
   }
   .navbar__btn {
     margin-left: 0;
-    border: none;
   }
   .navbar__ham {
     display: none;
@@ -285,7 +283,7 @@ header {
 
 /* Banner ============= */
 #banner .container {
-  background-image: linear-gradient(to bottom, var(--light-pink), rgb(255, 255, 255));
+  background-image: var(--white)
 }
 
 .banner__desc {
@@ -338,25 +336,44 @@ header {
   font-size: 1.5rem;
 }
 
+/* For larger screens */
 @media (min-width: 62em) {
   #banner .container {
     display: flex;
     align-items: center;
-    
+    justify-content: center;
   }
   .banner__img {
     order: 2;
-
   }
   .banner__desc {
     order: 1;
     text-align: initial;
-    width: 60%;
-    padding: 0 0 0 240px;
+    width: 50%;
+    padding: 0 5px 0 100px;
   }
   .banner__detail {
     max-width: 800px;
     width: 100%;
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .banner__img {
+    max-width: 80%; /* Adjust image width to be smaller on mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the image */
+    display: block; /* Make sure it's treated as a block element */
+  }
+  .banner__desc {
+    width: 100%; /* Full width for text on smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+    text-align: center; /* Center align text for a cleaner look */
+  }
+  #banner .container {
+    display: block; /* Stack elements vertically */
+    text-align: center;
   }
 }
 
@@ -430,6 +447,7 @@ header {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  
 }
 
 .exp__img img {
@@ -597,14 +615,13 @@ header {
 
 .todo__step-desc span {
   position: relative;
-  font-family: "Red Hat Display", serif;
-  font-size: 2.5rem;
+  font-family: "Krona One", serif;
+  font-size: 1.5rem;
   color: var(--white);
 }
 
 .todo__step-desc span:before {
   content: "";
-  background-color: var(--darkblue);
   position: absolute;
   width: 70px;
   height: 70px;
@@ -623,6 +640,7 @@ header {
   font-family: "Krona One", serif;
   color: var(--darkblue);
   text-transform: capitalize;
+  text-align: center;
 }
 
 .todo__step-desc p {
@@ -631,6 +649,7 @@ header {
   color: var(--gray);
   text-transform: capitalize;
   padding-top: 20px;
+  text-align: center;
 }
 
 .todo__step-img {
@@ -724,7 +743,7 @@ header {
   align-items: center;
 }
 .banner__expsecond {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-family: "Krona One", serif;
   color: var(--darkblue);
   margin-top: 10px;
@@ -737,21 +756,28 @@ header {
     font-size: 2.375rem;
   }
   .contact__form {
-    max-width: 100%px;
+    max-width: 100%; /* Corrected from '100%px' */
     width: 100%;
     margin: 0 auto;
+    display: flex; /* Added flex display to center items */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items horizontally */
+    justify-content: center; /* Center align items vertically */
   }
   .contact__form input {
     width: 100%;
+    margin-bottom: 1rem; /* Optional: Add space between input and button */
   }
   .contact__form button {
-    position: absolute;
-    top: 20%;
-    right: 2%;
-    transform: translate(-2%, -20%);
-    align-items: center;
+    position: relative; 
+    transform: none; 
+    align-self: center; 
+    margin-top: 30px;
+    margin-bottom: 10px;
   }
 }
+
+
 
 /* Footer ============= */
 .footer__top {
@@ -816,7 +842,6 @@ header {
 @media (min-width: 62rem) {
   .footer__top {
     flex-direction: row;
-    justify-content: space-between;
   }
   .footer__links {
     display: flex;
